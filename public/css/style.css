@@ -1,0 +1,235 @@
+/* typographie outfit google fond*/
+/* image de fond léopard*/
+/* empêche le scrolling */
+body {
+  font-family: "Outfit", sans-serif;
+  background-image: url(../img/arriere_plan.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* je mets la navbar du header en couleur beige */
+#bande_beige {
+  background-color: #c8ab37;
+}
+/* main */
+/* cadre */
+/*image de décors*/
+.cadre {
+  width: 1920px;
+  height: 350px;
+  background-image: url(../img/Decors0.png);
+  overflow: hidden;
+  width: 100%;
+}
+/* cadre page2 */
+.cadre2 {
+  width: 1920px;
+  height: 350px;
+  background-image: url(../img/Decors2.png);
+  overflow: hidden;
+  width: 100%;
+}
+/* cadre page3 */
+
+.cadre3 {
+  width: 1920px;
+  height: 350px;
+  background-image: url(../img/terrain.png);
+  overflow: hidden;
+  width: 100%;
+}
+/* cadre page4 */
+
+.cadre4 {
+  width: 1920px;
+  height: 350px;
+  background-image: url(../img/vueciel.jpg); /*arrière plan vu du ciel*/
+  overflow: hidden;
+  width: 100%;
+}
+/* taille de la video page index */
+#intro {
+  width: 640px;
+  height: 360px;
+}
+/* premier plan/cube caché en position fixed */
+/* opacité à 0.5% */
+.premierplan {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  opacity: 0.1%;
+  margin: -291px 0 0 1392px;
+}
+
+#button-page {
+  /*bouton pour passer à la scène suivante*/
+  background-color: rgb(33, 189, 61);
+  border-radius: 5px;
+}
+
+/* personnages */
+/* personnage qui se deplace, ne bouge pas et saute */
+
+.perso {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+/* avion page3 */
+#plane {
+  position: relative;
+  margin: -490px 0 0 697px;
+}
+
+/* avion page 4 */
+#ligne {
+  width: 150px;
+  position: relative;
+}
+/* premier plan avec les poteaux */
+.foreground {
+  position: absolute;
+  z-index: 3;
+}
+/* passante */
+#idle {
+  margin-top: 68px;
+  margin-left: 400px;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  z-index: 3;
+}
+/*danseur*/
+#teen {
+  width: 299px;
+  margin-left: 550px;
+  margin-top: 20px;
+}
+/*oiseau de la scene2*/
+#oiseau {
+  width: 200px;
+  height: 200px;
+  margin: 111px 0 0 0;
+}
+#piece1 {
+  height: 110px;
+}
+#piece2 {
+  height: 110px;
+  /* margin-left: 550px; */
+}
+/*score*/
+#score {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  margin: -205px 0 0 -108px;
+  z-index: 3;
+}
+/*enlevage du soulignage*/
+.text-light {
+  text-decoration: none;
+}
+
+/* bouton de fin */
+#replay {
+  background-color: rgb(33, 189, 61);
+  border-radius: 5px;
+  width: 175px;
+  height: 45px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#quit {
+  background-color: rgb(216, 60, 13);
+  border-radius: 5px;
+  width: 175px;
+  height: 45px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+}
+.videojeu,
+.buttonjeu {
+  display: none;
+}
+
+/*footer*/
+/* je mets le footer en couleur beige foncé */
+#beige {
+  background-color: #484537b6;
+}
+/* je mets le titre du footer en orange */
+#titre_orange {
+  color: #d45500;
+}
+#couleur_plus_sombre {
+  color: black;
+}
+/*téléphone portable*/
+
+@media (max-width: 779px) and (min-width: 412px) {
+  .cadre,
+  .cadre2,
+  .cadre3,
+  .cadre4,
+  .perso,
+  #plane,
+  .foreground,
+  #idle,
+  #ligne,
+  #piece1,
+  #piece2,
+  #oiseau,
+  .premierplan {
+    display: none;
+  }
+  .videojeu {
+    margin-top: 10px;
+    width: 372px;
+    display: block;
+  }
+  .buttonjeu {
+    background-color: rgb(93, 161, 65);
+    margin-bottom: 10px;
+    display: block;
+  }
+  #intro {
+    width: 422px;
+  }
+}
+/*tablette*/
+@media (max-width: 1080px) and (min-width: 915px) {
+  .cadre,
+  .cadre2,
+  .cadre3,
+  .cadre4,
+  .perso,
+  #plane,
+  .foreground,
+  #idle,
+  #ligne,
+  #piece1,
+  #piece2,
+  #oiseau,
+  .premierplan {
+    display: none;
+  }
+  .videojeu {
+    margin-top: 10px;
+    width: 672px;
+  }
+  .buttonjeu {
+    background-color: rgb(93, 161, 65);
+    margin-bottom: 10px;
+  }
+  #intro {
+    width: 422px;
+  }
+}
