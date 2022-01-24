@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/arriere_plan.png')}}"/>
+
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+			<script src="{{asset('js/leopard.js')}}"></script>
+
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+			<header>
+				<!--Ajout d'un id pour mettre la navbar en couleur beige-->
+				<nav id="bande_beige" class="navbar navbar-light ">
+					<div class="container-fluid">
+						<a class="navbar-brand" href="#">LEOPARDMAN</a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<!--Menu apparaissant sur le côté-->
+						<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+							<div class="offcanvas-header">
+								<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Possibilités</h5>
+								<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+							</div>
+							<div class="offcanvas-body">
+								<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+									<li
+										class="nav-item">
+										<!--Lien pour revenir à la page principale-->
+										<a class="nav-link active" aria-current="page" href="{{ path('home')}}">Revenir à l'accueil</a>
+									</li>
+									<li
+										class="nav-item">
+										<!--lien pour quitter le site et aller sur la page DuckDuckGo-->
+										<a class="nav-link" href="https://duckduckgo.com/">Quitter le site</a>
+									</li>
+								</form>
+							</div>
+						</div>
+					</div>
+				</nav>
+
+			</header>
+			<main>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="cadre">
+							<img class="foreground" src="../img/foreground.png" alt="">
+							<img id="move" class="perso" src="../img/ne_bouge_pas_.gif" alt="image personnage ">
+							<img class="premierplan" src="../img/carrebleu.png" alt="éléments devant">
+						</div>
+					</div>
+					<!--téléphone portable-->
+					<video class="videojeu" controls src="{{ asset('video/scene1.webm')}}"></video>
+					<button class="buttonjeu" onclick="window.location.href ='{{path('page2')}}'">Cliquez Ici pour continuer</button>
+				</div>
+			</main>
+
+			<!--footer de bootsrap-->
+			<footer
+				id="beige" class="bd-footer py-5 ">
+				<!--py veut dire div-padding-->
+				<div class="container py-5">
+					<div class="row">
+						<div class="col-lg-3 mb-3">
+							<a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="#" aria-label="Leopardman">
+								<span id="titre_orange" class="fs-5">LEOPARDMAN</span>
+							</a>
+							<ul class="list-unstyled small text-muted">
+								<li id="couleur_plus_sombre" class="mb-2">Site conçu avec amour, avec HTML5/CSS3/VanillaJS/BOOTSTRAP/SYMFONY4/PHP</li>
+							</ul>
+						</div>
+						<!--différentes colonnes/blocs de texte dans le footer-->
+						<div class="col-6 col-lg-2 offset-lg-1 mb-3">
+							<h5>Informations</h5>
+							<!--Informations complémentaires#1-->
+							<ul class="list-unstyled">
+								<li class="mb-2">
+									<div>Accueil</div>
+								</li>
+								<li class="mb-2">
+									<div>Résumé</div>
+								</li>
+								<li class="mb-2">
+									<div>2022</div>
+								</li>
+								<li class="mb-2">
+									<div>Auteur: Mikaël Lewi</div>
+								</li>
+								<li class="mb-2">
+									<div>
+										Janvier</div>
+								</li>
+							</ul>
+						</div>
+						<div
+							class="col-6 col-lg-2 mb-3">
+							<!--Informations complémentaires#1-->
+							<h5>Guide</h5>
+							<ul class="list-unstyled">
+								<li class="mb-2">
+									<div>Par où commencer</div>
+								</li>
+								<li class="mb-2">
+									<div>Personnage</div>
+								</li>
+								<li class="mb-2">
+									<div>Décors</div>
+								</li>
+								<li class="mb-2">
+									<div>Accessoires</div>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6 col-lg-2 mb-3">
+							<h5>Langages</h5>
+							<ul
+								class="list-unstyled">
+								<!--Langages utilisés-->
+								<li class="mb-2">
+									<div>HTML5</div>
+								</li>
+								<li class="mb-2">
+									<div>CSS3</div>
+								</li>
+								<li class="mb-2">
+									<div>JS</div>
+								</li>
+								<li class="mb-2">
+									<div>PHP</div>
+								</li>
+								<li class="mb-2">
+									<div>SYMFONY</div>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6 col-lg-2 mb-3">
+							<h5>Communauté</h5>
+							<ul
+								class="list-unstyled">
+								<!--Réseaux_sociaux-->
+								<li class="mb-2">
+									<div>Youtube</div>
+								</li>
+								<li class="mb-2">
+									<div>Facebook</div>
+								</li>
+								<li class="mb-2">
+									<div>Twitter</div>
+								</li>
+								<li class="mb-2">
+									<div>Reddit</div>
+								</li>
+								<li class="mb-2">
+									<div>Vimeo</div>
+								</li>
+								<li class="mb-2">
+									<div>Pinterest</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+
+		{% endblock %}
+	</body>
+</html>
